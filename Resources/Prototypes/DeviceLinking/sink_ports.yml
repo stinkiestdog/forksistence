@@ -44,6 +44,11 @@
   description: signal-port-description-doorbolt
 
 - type: sinkPort
+  id: SafeDoorBolt
+  name: signal-port-name-safedoorbolt
+  description: signal-port-description-safedoorbolt
+
+- type: sinkPort
   id: Trigger
   name: signal-port-name-trigger-receiver
   description: signal-port-description-trigger-receiver
@@ -112,7 +117,7 @@
   id: RandomGateInput
   name: signal-port-name-logic-random-input
   description: signal-port-description-logic-random-input
-  
+
 - type: sinkPort
   id: SetParticleDelta
   name: signal-port-name-set-particle-delta

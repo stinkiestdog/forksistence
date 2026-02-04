@@ -25,6 +25,9 @@ signal-port-description-close = Closes a device.
 signal-port-name-doorbolt = Door bolt
 signal-port-description-doorbolt = Bolts door when HIGH.
 
+signal-port-name-safedoorbolt = Safe door bolt
+signal-port-description-safedoorbolt = Bolts door when HIGH. Cannot change bolts on an open door.
+
 signal-port-name-trigger-receiver = Trigger
 signal-port-description-trigger-receiver = Triggers some mechanism on the device.
 

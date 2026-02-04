@@ -81,6 +81,24 @@ namespace Content.Server.DeviceLinking.Systems
 
                 _doorSystem.SetBoltsDown((uid, bolts), bolt);
             }
+            else if (args.Port == component.SafeBolt) // only extends the bolts if the door is closed
+            {
+                if (!TryComp<DoorBoltComponent>(uid, out var bolts) || door.State != DoorState.Closed)
+                    return;
+
+                // if its a pulse toggle, otherwise set bolts to high/low
+                bool bolt;
+                if (state == SignalState.Momentary)
+                {
+                    bolt = !bolts.BoltsDown;
+                }
+                else
+                {
+                    bolt = state == SignalState.High;
+                }
+
+                _doorSystem.SetBoltsDown((uid, bolts), bolt);
+            }
         }
 
         private void OnStateChanged(EntityUid uid, DoorSignalControlComponent door, DoorStateChangedEvent args)
