@@ -1,0 +1,91 @@
+- type: entity
+  parent: [ BaseWallmountMachine, BaseThruster ]
+  id: WallmountThruster
+  name: wallmount thruster
+  description: A wall mount thruster
+  abstract: false
+  components:
+  - type: ApcPowerReceiver
+    powerLoad: 500
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 600
+      behaviors:
+        - !type:DoActsBehavior
+          acts: ["Destruction"]
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+        - !type:DoActsBehavior
+          acts: ["Destruction"]
+        - !type:PlaySoundBehavior
+          sound:
+            collection: MetalBreak
+        - !type:ChangeConstructionNodeBehavior
+          node: machineFrame
+  - type: Sprite
+    sprite: Structures/Shuttles/thruster.rsi
+    layers:
+    - state: base
+      map: ["enum.ThrusterVisualLayers.Base"]
+    - state: thrust
+      map: ["enum.ThrusterVisualLayers.ThrustOn"]
+      shader: unshaded
+      visible: false
+    - state: thrust_burn_unshaded
+      map: ["enum.ThrusterVisualLayers.ThrustingUnshaded"]
+      shader: unshaded
+      visible: false
+      offset: 0, 1
+    scale: 0.7, 0.5
+    offset: 0, 0.30
+  - type: Thruster
+    thrust: 50
+  - type: WallMount
+    direction: 180
+
+ # Thruster under construction, Only use this if you are going to make it a construction graph and not a machine assembly!
+- type: entity
+  parent: BaseWallmountMetallic
+  categories: [ HideSpawnMenu ]
+  id: IncompleteWallmountThruster
+  name: wallmount thruster frame
+  description: a incomplete thruster of the wallmounted variety 
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    sprite: Structures/Shuttles/thruster.rsi
+    state: base
+    scale: 0.7, 0.5
+    offset: 0, 0.30
+  - type: Construction
+    graph: WallmountThruster
+    node: frame
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors: #excess damage, don't spawn entities.
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          SheetSteel1:
+            min: 1
+            max: 1
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: WallMount
+    direction: 180
