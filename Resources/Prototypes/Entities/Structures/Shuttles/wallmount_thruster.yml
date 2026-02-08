@@ -46,6 +46,9 @@
     thrust: 50
   - type: WallMount
     direction: 180
+  - type: Construction
+    graph: APC
+    node: apcFrame
 
  # Thruster under construction, Only use this if you are going to make it a construction graph and not a machine assembly!
 - type: entity
@@ -89,3 +92,6 @@
         acts: [ "Destruction" ]
   - type: WallMount
     direction: 180
+  - type: Construction
+    graph: APC
+    node: apcFrame

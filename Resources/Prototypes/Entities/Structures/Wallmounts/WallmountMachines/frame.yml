@@ -1,0 +1,161 @@
+﻿- type: entity
+  parent: BaseWallmountMetallic
+  id: UnfinishedWallmountMachineFrame
+  name: wall-mounted machine frame
+  description: A wall-mounted machine under construction. Needs more parts.
+  suffix: Unfinished
+  placement:
+    mode: SnapgridCenter
+  components:
+    - type: Rotatable
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape:
+            !type:PhysShapeAabb
+            bounds: "-0.25,-0.5,0.25,0.5"
+          density: 190
+          mask:
+          - MachineMask
+          layer:
+          - MachineLayer
+    - type: Construction
+      containers:
+        - machine_board
+        - machine_parts
+      graph: WallmountMachineGraph
+      node: missingWires
+    - type: ContainerContainer
+      containers:
+        machine_board: !type:Container
+        machine_parts: !type:Container
+    - type: Destructible
+      thresholds:
+      - trigger: # Excess damage, don't spawn entities
+          !type:DamageTrigger
+          damage: 200
+        behaviors:
+        - !type:PlaySoundBehavior
+          sound:
+            collection: MetalBreak
+        - !type:DoActsBehavior
+          acts: ["Destruction"]
+      - trigger:
+          !type:DamageTrigger
+          damage: 100
+        behaviors:
+        - !type:PlaySoundBehavior
+          sound:
+            collection: MetalBreak
+        - !type:ChangeConstructionNodeBehavior
+          node: start
+        - !type:DoActsBehavior
+          acts: ["Destruction"]
+    - type: Sprite
+      drawdepth: WallMountedItems
+      sprite: Structures/Wallmounts/parts.rsi
+      state: box_0
+    - type: WallMount
+      direction: 180
+
+- type: entity
+  parent: BaseWallmountMetallic
+  id: WallmountMachineFrame
+  description: A wall-mounted machine under construction. Needs more parts.
+  name: wall-mounted machine frame
+  suffix: Ready
+  components:
+    - type: Rotatable
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape:
+            !type:PhysShapeAabb
+            bounds: "-0.25,-0.5,0.25,0.5"
+          density: 190
+          mask:
+          - MachineMask
+          layer:
+          - MachineLayer
+    - type: Construction
+      graph: WallmountMachineGraph
+      node: wallmountmachineFrame
+      defaultTarget: wallmountmachine
+      containers:
+        - machine_board
+        - machine_parts
+    - type: Destructible
+      thresholds:
+      - trigger: # Excess damage, don't spawn entities
+          !type:DamageTrigger
+          damage: 200
+        behaviors:
+        - !type:PlaySoundBehavior
+          sound:
+            collection: MetalBreak
+        - !type:DoActsBehavior
+          acts: ["Destruction"]
+      - trigger:
+          !type:DamageTrigger
+          damage: 100
+        behaviors:
+        - !type:PlaySoundBehavior
+          sound:
+            collection: MetalBreak
+        - !type:ChangeConstructionNodeBehavior
+          node: missingWires
+        - !type:DoActsBehavior
+          acts: ["Destruction"]
+    - type: MachineFrame
+    - type: ContainerContainer
+      containers:
+        machine_board: !type:Container
+        machine_parts: !type:Container
+    - type: Sprite
+      drawdepth: WallMountedItems
+      sprite: Structures/Wallmounts/parts.rsi
+      state: box_1
+    - type: Appearance
+    - type: ItemMapper
+      mapLayers:
+        box_2:
+          minCount: 1
+          whitelist:
+            components:
+            - MachineBoard
+
+- type: entity
+  id: WallmountMachineFrameDestroyed
+  parent: BaseWallmountMetallic
+  name: destroyed wall-mounted machine frame
+  description: A wall-mounted machine frame. It's seen better days.
+  placement:
+    mode: SnapgridCenter
+  components:
+    - type: Rotatable
+    - type: Construction
+      graph: WallmountMachineGraph
+      node: destroyedWallmountMachineFrame
+    - type: Destructible
+      thresholds:
+      - trigger: # Excess damage, don't spawn entities
+          !type:DamageTrigger
+          damage: 200
+        behaviors:
+        - !type:DoActsBehavior
+          acts: ["Destruction"]
+      - trigger:
+          !type:DamageTrigger
+          damage: 100
+        behaviors:
+        - !type:SpawnEntitiesBehavior
+          spawn:
+            SheetSteel1:
+              min: 1
+              max: 3
+        - !type:DoActsBehavior
+          acts: ["Destruction"]
+    - type: Sprite
+      drawdepth: WallMountedItems
+      sprite: Structures/Wallmounts/parts.rsi
+      state: destroyed
