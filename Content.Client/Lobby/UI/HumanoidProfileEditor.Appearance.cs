@@ -253,6 +253,7 @@ public sealed partial class HumanoidProfileEditor
         UpdateGenderControls();
         UpdateVoiceControls();
         _markingsModel.SetOrganSexes(newSex);
+        _markingsModel.ValidateMarkings();
         ReloadPreview();
     }
 
