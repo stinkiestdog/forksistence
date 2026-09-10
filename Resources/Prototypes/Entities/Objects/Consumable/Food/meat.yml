@@ -830,6 +830,17 @@
       - state: slime-inhand-left
       right:
       - state: slime-inhand-right
+  - type: Solution # Persistence: overwrite FoodMeatBase to add slime
+    solution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 5
+      - ReagentId: UncookedAnimalProteins
+        Quantity: 20
+      - ReagentId: Fat
+        Quantity: 5
+      - ReagentId: Slime # Persistence: For Yinglets
+        Quantity: 10
 
 - type: entity
   parent: [SolutionHuge, FoodMeatRawBase, BaseSlicingRefinableFood]
@@ -1378,6 +1389,8 @@
         Quantity: 5
       - ReagentId: Water
         Quantity: 4 # makes saline if you add salt!
+      - ReagentId: Slime # Persistence: For Yinglet
+        Quantity: 3
   - type: FoodSequenceElement
     entries:
       Burger: MeatSnail

@@ -587,6 +587,8 @@
         Quantity: 3
       - ReagentId: Water
         Quantity: 4 #It makes saline if you add salt!
+      - ReagentId: Slime
+        Quantity: 5
   - type: Satiation
     satiations:
       Hunger:
@@ -595,6 +597,10 @@
         prototype: MouseThirst
   - type: Extractable
     grindableSolutionName: food
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatSnail
+      amount: 1
   - type: Tag
     tags:
     - Trash
