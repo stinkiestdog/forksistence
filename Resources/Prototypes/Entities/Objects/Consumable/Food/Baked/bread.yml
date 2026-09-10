@@ -19,7 +19,7 @@
   - type: Solution
     solution:
       reagents:
-      - ReagentId: Nutriment
+      - ReagentId: Grain # Persistence: Nutriment < Grain
         Quantity: 80
 
 - type: entity
@@ -39,7 +39,7 @@
   - type: Solution
     solution:
       reagents:
-      - ReagentId: Nutriment
+      - ReagentId: Grain # Persistence: Nutriment < Grain
         Quantity: 10 # 1/8 of a loaf of bread
 
 # Custom Bread Example
@@ -144,7 +144,7 @@
   - type: Solution
     solution:
       reagents:
-      - ReagentId: Nutriment
+      - ReagentId: Grain # Persistence: Nutriment < Grain
         Quantity: 40
       - ReagentId: Fiber
         Quantity: 40
@@ -172,7 +172,7 @@
   - type: Solution
     solution:
       reagents:
-      - ReagentId: Nutriment
+      - ReagentId: Grain # Persistence: Nutriment < Grain
         Quantity: 5
       - ReagentId: Fiber
         Quantity: 5
@@ -231,7 +231,7 @@
   - type: Solution
     solution:
       reagents:
-      - ReagentId: Nutriment
+      - ReagentId: Grain # Persistence: Nutriment < Grain
         Quantity: 100
       - ReagentId: Vitamin
         Quantity: 4
@@ -254,7 +254,7 @@
   - type: Solution
     solution:
       reagents:
-      - ReagentId: Nutriment
+      - ReagentId: Grain # Persistence: Nutriment < Grain
         Quantity: 12.5
       - ReagentId: Vitamin
         Quantity: 0.5
@@ -279,7 +279,7 @@
   - type: Solution
     solution:
       reagents:
-      - ReagentId: Nutriment
+      - ReagentId: Grain # Persistence: Nutriment < Grain
         Quantity: 104
       - ReagentId: Protein
         Quantity: 4
@@ -307,7 +307,7 @@
   - type: Solution
     solution:
       reagents:
-      - ReagentId: Nutriment
+      - ReagentId: Grain # Persistence: Nutriment < Grain
         Quantity: 13
       - ReagentId: Protein
         Quantity: 0.5
@@ -339,7 +339,7 @@
   - type: Solution
     solution:
       reagents:
-      - ReagentId: Nutriment
+      - ReagentId: Grain # Persistence: Nutriment < Grain
         Quantity: 96
       - ReagentId: Vitamin
         Quantity: 4
@@ -363,7 +363,7 @@
   - type: Solution
     solution:
       reagents:
-      - ReagentId: Nutriment
+      - ReagentId: Grain # Persistence: Nutriment < Grain
         Quantity: 12
       - ReagentId: Vitamin
         Quantity: 0.5
@@ -414,7 +414,7 @@
   - type: Solution
     solution:
       reagents:
-      - ReagentId: Nutriment
+      - ReagentId: Grain # Persistence: Nutriment < Grain
         Quantity: 100
       - ReagentId: Protein
         Quantity: 10
@@ -439,7 +439,7 @@
   - type: Solution
     solution:
       reagents:
-      - ReagentId: Nutriment
+      - ReagentId: Grain # Persistence: Nutriment < Grain
         Quantity: 12.5
       - ReagentId: Protein
         Quantity: 1.25
@@ -469,7 +469,7 @@
   - type: Solution
     solution:
       reagents:
-      - ReagentId: Nutriment
+      - ReagentId: Grain # Persistence: Nutriment < Grain
         Quantity: 104
       - ReagentId: Protein
         Quantity: 4
@@ -497,7 +497,7 @@
   - type: Solution
     solution:
       reagents:
-      - ReagentId: Nutriment
+      - ReagentId: Grain # Persistence: Nutriment < Grain
         Quantity: 13
       - ReagentId: Protein
         Quantity: 0.5
@@ -529,7 +529,7 @@
   - type: Solution
     solution:
       reagents:
-      - ReagentId: Nutriment
+      - ReagentId: Grain # Persistence: Nutriment < Grain
         Quantity: 90
       - ReagentId: Protein
         Quantity: 10
@@ -551,7 +551,7 @@
   - type: Solution
     solution:
       reagents:
-      - ReagentId: Nutriment
+      - ReagentId: Grain # Persistence: Nutriment < Grain
         Quantity: 11.25
       - ReagentId: Protein
         Quantity: 1.25
@@ -576,7 +576,7 @@
   - type: Solution
     solution:
       reagents:
-      - ReagentId: Nutriment
+      - ReagentId: Grain # Persistence: Nutriment < Grain
         Quantity: 104
       - ReagentId: Protein
         Quantity: 4
@@ -604,7 +604,7 @@
   - type: Solution
     solution:
       reagents:
-      - ReagentId: Nutriment
+      - ReagentId: Grain # Persistence: Nutriment < Grain
         Quantity: 13
       - ReagentId: Protein
         Quantity: 0.5
@@ -633,7 +633,7 @@
   - type: Solution
     solution:
       reagents:
-      - ReagentId: Nutriment
+      - ReagentId: Grain # Persistence: Nutriment < Grain
         Quantity: 80
       - ReagentId: Vitamin
         Quantity: 4
@@ -693,7 +693,7 @@
   - type: Solution
     solution:
       reagents:
-      - ReagentId: Nutriment
+      - ReagentId: Grain # Persistence: Nutriment < Grain
         Quantity: 40
       - ReagentId: Fiber
         Quantity: 40
@@ -715,7 +715,7 @@
   - type: Solution
     solution:
       reagents:
-      - ReagentId: Nutriment
+      - ReagentId: Grain # Persistence: Nutriment < Grain
         Quantity: 8
       - ReagentId: Vitamin
         Quantity: 0.4
@@ -742,7 +742,7 @@
   - type: Solution
     solution:
       reagents:
-      - ReagentId: Nutriment
+      - ReagentId: Grain # Persistence: Nutriment < Grain
         Quantity: 4
       - ReagentId: Fiber
         Quantity: 4
@@ -768,7 +768,7 @@
   - type: Solution
     solution:
       reagents:
-      - ReagentId: Nutriment
+      - ReagentId: Grain # Persistence: Nutriment < Grain
         Quantity: 10
       - ReagentId: Butter
         Quantity: 2.5
@@ -789,7 +789,7 @@
   - type: Solution
     solution:
       reagents:
-      - ReagentId: Nutriment
+      - ReagentId: Grain # Persistence: Nutriment < Grain
         Quantity: 10
       - ReagentId: EggCooked
         Quantity: 6
@@ -815,7 +815,7 @@
   - type: Solution
     solution:
       reagents:
-      - ReagentId: Nutriment
+      - ReagentId: Grain # Persistence: Nutriment < Grain
         Quantity: 16
       - ReagentId: Vitamin
         Quantity: 4
@@ -841,7 +841,7 @@
   - type: Solution
     solution:
       reagents:
-      - ReagentId: Nutriment
+      - ReagentId: Grain # Persistence: Nutriment < Grain
         Quantity: 15
       - ReagentId: Vitamin
         Quantity: 5
@@ -862,7 +862,7 @@
   - type: Solution
     solution:
       reagents:
-      - ReagentId: Nutriment
+      - ReagentId: Grain # Persistence: Nutriment < Grain
         Quantity: 2.5
       - ReagentId: Mold
         Quantity: 10
@@ -880,7 +880,7 @@
   - type: Solution
     solution:
       reagents:
-      - ReagentId: Nutriment
+      - ReagentId: Grain # Persistence: Nutriment < Grain
         Quantity: 20
       - ReagentId: Wine
         Quantity: 5
@@ -903,7 +903,7 @@
   - type: Solution
     solution:
       reagents:
-      - ReagentId: Nutriment
+      - ReagentId: Grain # Persistence: Nutriment < Grain
         Quantity: 105
       - ReagentId: Vitamin
         Quantity: 10
