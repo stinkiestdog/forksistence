@@ -17,7 +17,9 @@
         maxVol: 55 # flavored cakes have less room for spiking
         reagents:
         - ReagentId: Nutriment
-          Quantity: 40
+          Quantity: 25
+        - ReagentId: Grain
+          Quantity: 15
         - ReagentId: Vitamin
           Quantity: 10
   - type: Item
@@ -55,7 +57,9 @@
         maxVol: 12
         reagents:
         - ReagentId: Nutriment
-          Quantity: 8
+          Quantity: 3
+        - ReagentId: Grain
+          Quantity: 5
         - ReagentId: Vitamin
           Quantity: 2
   - type: Item
@@ -140,7 +144,9 @@
         maxVol: 55
         reagents:
         - ReagentId: Nutriment
-          Quantity: 20
+          Quantity: 5
+        - ReagentId: Grain
+          Quantity: 15
         - ReagentId: Vitamin
           Quantity: 5
   - type: Item
@@ -160,7 +166,7 @@
       food:
         maxVol: 10
         reagents:
-        - ReagentId: Nutriment
+        - ReagentId: Grain
           Quantity: 4
         - ReagentId: Vitamin
           Quantity: 1
@@ -525,7 +531,9 @@
         maxVol: 70
         reagents:
         - ReagentId: Nutriment
-          Quantity: 40
+          Quantity: 25
+        - ReagentId: Grain
+          Quantity: 15
         - ReagentId: Vitamin
           Quantity: 20
         - ReagentId: Milk
@@ -555,7 +563,9 @@
         maxVol: 15
         reagents:
         - ReagentId: Nutriment
-          Quantity: 8
+          Quantity: 5
+        - ReagentId: Grain
+          Quantity: 3
         - ReagentId: Vitamin
           Quantity: 4
         - ReagentId: Milk
@@ -596,7 +606,9 @@
         maxVol: 55
         reagents:
         - ReagentId: Nutriment
-          Quantity: 40
+          Quantity: 25
+        - ReagentId: Grain
+          Quantity: 15
         - ReagentId: Theobromine
           Quantity: 5
         - ReagentId: Vitamin
@@ -625,7 +637,9 @@
         maxVol: 15
         reagents:
         - ReagentId: Nutriment
-          Quantity: 8
+          Quantity: 5
+        - ReagentId: Grain
+          Quantity: 3
         - ReagentId: Theobromine
           Quantity: 1
         - ReagentId: Vitamin
@@ -767,7 +781,9 @@
         maxVol: 60
         reagents:
         - ReagentId: Nutriment
-          Quantity: 35
+          Quantity: 25
+        - ReagentId: Grain
+          Quantity: 10
         - ReagentId: Vitamin
           Quantity: 15
   - type: Tag
@@ -799,7 +815,9 @@
         maxVol: 15
         reagents:
         - ReagentId: Nutriment
-          Quantity: 7
+          Quantity: 4
+        - ReagentId: Grain
+          Quantity: 3
         - ReagentId: Vitamin
           Quantity: 3
   - type: Tag
@@ -905,7 +923,9 @@
         maxVol: 55
         reagents:
         - ReagentId: Nutriment
-          Quantity: 25
+          Quantity: 15
+        - ReagentId: Grain
+          Quantity: 10
         - ReagentId: Vitamin
           Quantity: 5
         - ReagentId: Sugar
@@ -927,7 +947,9 @@
         maxVol: 15
         reagents:
         - ReagentId: Nutriment
-          Quantity: 6
+          Quantity: 4
+        - ReagentId: Grain
+          Quantity: 2
         - ReagentId: Vitamin
           Quantity: 2
         - ReagentId: Sugar
@@ -958,7 +980,9 @@
         maxVol: 55
         reagents:
         - ReagentId: Nutriment
-          Quantity: 30
+          Quantity: 20
+        - ReagentId: Grain
+          Quantity: 10
         - ReagentId: Vitamin
           Quantity: 5
         - ReagentId: Sugar
@@ -980,7 +1004,9 @@
         maxVol: 15
         reagents:
         - ReagentId: Nutriment
-          Quantity: 8
+          Quantity: 5
+        - ReagentId: Grain
+          Quantity: 3
         - ReagentId: Vitamin
           Quantity: 1
         - ReagentId: Sugar
@@ -1005,7 +1031,9 @@
         maxVol: 55
         reagents:
         - ReagentId: Nutriment
-          Quantity: 30
+          Quantity: 20
+        - ReagentId: Grain
+          Quantity: 10
         - ReagentId: Vitamin
           Quantity: 5
         - ReagentId: PolypyryliumOligomers
@@ -1027,7 +1055,9 @@
         maxVol: 15
         reagents:
         - ReagentId: Nutriment
-          Quantity: 8
+          Quantity: 5
+        - ReagentId: Grain
+          Quantity: 3
         - ReagentId: Vitamin
           Quantity: 1
         - ReagentId: PolypyryliumOligomers
@@ -1055,7 +1085,9 @@
         maxVol: 30
         reagents:
         - ReagentId: Nutriment
-          Quantity: 20
+          Quantity: 15
+        - ReagentId: Grain
+          Quantity: 5
         - ReagentId: Vitamin
           Quantity: 5
   - type: Sprite
@@ -1144,7 +1176,9 @@
         maxVol: 125 # SUPER dense cake
         reagents:
         - ReagentId: Nutriment
-          Quantity: 80
+          Quantity: 50
+        - ReagentId: Grain
+          Quantity: 30
         - ReagentId: Sugar
           Quantity: 30
   - type: Edible
@@ -1171,7 +1205,9 @@
         maxVol: 25
         reagents:
         - ReagentId: Nutriment
-          Quantity: 10
+          Quantity: 7
+        - ReagentId: Grain
+          Quantity: 3
         - ReagentId: Sugar
           Quantity: 5
   - type: Edible
@@ -1210,7 +1246,9 @@
         maxVol: 55
         reagents:
         - ReagentId: Nutriment
-          Quantity: 30
+          Quantity: 20
+        - ReagentId: Grain
+          Quantity: 10
         - ReagentId: Vitamin
           Quantity: 5
         - ReagentId: Fiber
@@ -1237,7 +1275,9 @@
         maxVol: 15
         reagents:
         - ReagentId: Nutriment
-          Quantity: 8
+          Quantity: 5
+        - ReagentId: Grain
+          Quantity: 3
         - ReagentId: Vitamin
           Quantity: 1
         - ReagentId: Fiber
@@ -1266,7 +1306,9 @@
         maxVol: 55
         reagents:
         - ReagentId: Nutriment
-          Quantity: 40
+          Quantity: 25
+        - ReagentId: Grain
+          Quantity: 15
         - ReagentId: Vitamin
           Quantity: 10
         - ReagentId: Milk
@@ -1307,7 +1349,9 @@
         maxVol: 12
         reagents:
         - ReagentId: Nutriment
-          Quantity: 8
+          Quantity: 5
+        - ReagentId: Grain
+          Quantity: 3
         - ReagentId: Vitamin
           Quantity: 2
         - ReagentId: Milk

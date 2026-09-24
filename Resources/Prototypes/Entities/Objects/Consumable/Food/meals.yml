@@ -23,10 +23,27 @@
         - ReagentId: Nutriment
           Quantity: 20
 
+# Persistence: New based for grainy foods, for Yinglets
+- type: entity
+  abstract: true
+  parent: FoodMealBase
+  id: FoodMealGrainBase
+  description: A delicious meal, cooked with love, and grains.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 26
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 10
+        - ReagentId: Grain
+          Quantity: 10
+
 # Meals
 
 - type: entity
-  parent: FoodMealBase
+  parent: FoodMealGrainBase # Persistence: FoodMealBase < FoodMealGrainBase
   id: FoodMealPotatoLoaded
   name: loaded baked potato
   description: Totally baked.
@@ -42,7 +59,7 @@
 # Tastes like potato.
 
 - type: entity
-  parent: FoodMealBase
+  parent: FoodMealGrainBase # Persistence: FoodMealBase < FoodMealGrainBase
   id: FoodMealFries
   name: space fries
   description: AKA, French Fries, Freedom Fries, etc.
@@ -58,7 +75,7 @@
 # Tastes like fries, salt.
 
 - type: entity
-  parent: FoodMealBase
+  parent: FoodMealGrainBase # Persistence: FoodMealBase < FoodMealGrainBase
   id: FoodMealFriesCheesy
   name: cheesy fries
   description: Fries. Covered in cheese. Duh.
@@ -121,7 +138,7 @@
       food:
         maxVol: 20
         reagents:
-        - ReagentId: Nutriment
+        - ReagentId: Grain
           Quantity: 15
         - ReagentId: TableSalt
           Quantity: 2
@@ -150,7 +167,9 @@
         maxVol: 25
         reagents:
         - ReagentId: Nutriment
-          Quantity: 20
+          Quantity: 10
+        - ReagentId: Grain
+          Quantity: 10
         - ReagentId: TableSalt
           Quantity: 2
 # Tastes like nachos, cheese.
@@ -230,7 +249,9 @@
         maxVol: 40
         reagents:
         - ReagentId: Nutriment
-          Quantity: 25
+          Quantity: 15
+        - ReagentId: Grain
+          Quantity: 10
         - ReagentId: CapsaicinOil
           Quantity: 7
         - ReagentId: Vitamin
@@ -289,7 +310,7 @@
 # Tastes like eggplant, cheese.
 
 - type: entity
-  parent: FoodMealBase
+  parent: FoodMealGrainBase # Persistence: FoodMealBase < FoodMealGrainBase
   id: FoodMealPotatoYaki
   name: yaki imo
   description: Made with roasted sweet potatoes!
@@ -325,7 +346,9 @@
         maxVol: 55
         reagents:
         - ReagentId: Nutriment
-          Quantity: 40
+          Quantity: 30
+        - ReagentId: Grain
+          Quantity: 10
         - ReagentId: CarpoToxin
           Quantity: 3
         - ReagentId: Vitamin
@@ -419,7 +442,9 @@
         maxVol: 15
         reagents:
         - ReagentId: Nutriment
-          Quantity: 6
+          Quantity: 4
+        - ReagentId: Grain
+          Quantity: 2
         - ReagentId: Vitamin
           Quantity: 1
   - type: Tag
@@ -479,7 +504,9 @@
         maxVol: 15
         reagents:
         - ReagentId: Nutriment
-          Quantity: 6
+          Quantity: 4
+        - ReagentId: Grain
+          Quantity: 2
         - ReagentId: Vitamin
           Quantity: 4
   - type: Tag
