@@ -143,10 +143,8 @@
       food:
         maxVol: 55
         reagents:
-        - ReagentId: Nutriment
-          Quantity: 5
         - ReagentId: Grain
-          Quantity: 15
+          Quantity: 20
         - ReagentId: Vitamin
           Quantity: 5
   - type: Item
@@ -531,9 +529,9 @@
         maxVol: 70
         reagents:
         - ReagentId: Nutriment
-          Quantity: 25
+          Quantity: 20
         - ReagentId: Grain
-          Quantity: 15
+          Quantity: 20
         - ReagentId: Vitamin
           Quantity: 20
         - ReagentId: Milk
@@ -563,9 +561,9 @@
         maxVol: 15
         reagents:
         - ReagentId: Nutriment
-          Quantity: 5
+          Quantity: 4
         - ReagentId: Grain
-          Quantity: 3
+          Quantity: 4
         - ReagentId: Vitamin
           Quantity: 4
         - ReagentId: Milk
@@ -606,9 +604,9 @@
         maxVol: 55
         reagents:
         - ReagentId: Nutriment
-          Quantity: 25
+          Quantity: 20
         - ReagentId: Grain
-          Quantity: 15
+          Quantity: 20
         - ReagentId: Theobromine
           Quantity: 5
         - ReagentId: Vitamin
@@ -637,9 +635,9 @@
         maxVol: 15
         reagents:
         - ReagentId: Nutriment
-          Quantity: 5
+          Quantity: 4
         - ReagentId: Grain
-          Quantity: 3
+          Quantity: 4
         - ReagentId: Theobromine
           Quantity: 1
         - ReagentId: Vitamin
@@ -781,9 +779,9 @@
         maxVol: 60
         reagents:
         - ReagentId: Nutriment
-          Quantity: 25
+          Quantity: 20
         - ReagentId: Grain
-          Quantity: 10
+          Quantity: 15
         - ReagentId: Vitamin
           Quantity: 15
   - type: Tag

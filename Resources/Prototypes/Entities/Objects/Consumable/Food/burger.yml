@@ -100,9 +100,9 @@
         maxVol: 15
         reagents:
         - ReagentId: Nutriment
-          Quantity: 5
+          Quantity: 4
         - ReagentId: Grain
-          Quantity: 2
+          Quantity: 3
         - ReagentId: Vitamin
           Quantity: 3
   - type: Item

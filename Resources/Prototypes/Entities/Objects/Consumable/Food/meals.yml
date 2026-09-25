@@ -167,9 +167,9 @@
         maxVol: 25
         reagents:
         - ReagentId: Nutriment
-          Quantity: 10
+          Quantity: 5
         - ReagentId: Grain
-          Quantity: 10
+          Quantity: 15
         - ReagentId: TableSalt
           Quantity: 2
 # Tastes like nachos, cheese.
@@ -249,9 +249,9 @@
         maxVol: 40
         reagents:
         - ReagentId: Nutriment
-          Quantity: 15
-        - ReagentId: Grain
           Quantity: 10
+        - ReagentId: Grain
+          Quantity: 15
         - ReagentId: CapsaicinOil
           Quantity: 7
         - ReagentId: Vitamin
