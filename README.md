@@ -9,7 +9,7 @@ Space Station 14 Persistence is a fork of Space Station 14.
 
 [Discord](https://discord.ss14.io/)
 
-</div>a
+</div>
 
 ## License
 
