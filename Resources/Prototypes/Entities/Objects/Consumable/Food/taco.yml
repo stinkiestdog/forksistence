@@ -22,7 +22,7 @@
         canReact: false # Dont want cause reactions inside tacos after merging ingredients
         maxVol: 10
         reagents:
-        - ReagentId: Grain # Persistence: Nutriment < Grain
+        - ReagentId: Grain # Scav: Nutriment < Grain
           Quantity: 6.66
   - type: FoodSequenceStartPoint
     key: Taco
@@ -55,7 +55,7 @@
       food:
         maxVol: 15
         reagents:
-        - ReagentId: Grain # Persistence: Nutriment < Grain
+        - ReagentId: Grain # Scav: Nutriment < Grain
           Quantity: 6
         - ReagentId: Vitamin
           Quantity: 4
@@ -104,8 +104,8 @@
         maxVol: 20
         reagents:
         - ReagentId: Nutriment
-          Quantity: 4
-        - ReagentId: Grain # Persistence: Nutriment < Grain
+          Quantity: 4 # Scav: 10 < 4
+        - ReagentId: Grain # Scav: Nutriment < Grain
           Quantity: 6
         - ReagentId: Vitamin
           Quantity: 6
@@ -123,7 +123,7 @@
       food:
         maxVol: 15
         reagents:
-        - ReagentId: Grain # Persistence: Nutriment < Grain
+        - ReagentId: Grain # Scav: Nutriment < Grain
           Quantity: 6
         - ReagentId: Vitamin
           Quantity: 4
@@ -142,8 +142,8 @@
         maxVol: 30
         reagents:
         - ReagentId: Nutriment
-          Quantity: 16
-        - ReagentId: Grain # Persistence: Nutriment < Grain
+          Quantity: 16 # Scav: 22 < 16
+        - ReagentId: Grain # Scav: Nutriment < Grain
           Quantity: 6
         - ReagentId: Vitamin
           Quantity: 6
@@ -162,8 +162,8 @@
         maxVol: 30
         reagents:
         - ReagentId: Nutriment
-          Quantity: 16
-        - ReagentId: Grain # Persistence: Nutriment < Grain
+          Quantity: 16 # Scav: 22 < 16
+        - ReagentId: Grain # Scav: Nutriment < Grain
           Quantity: 6
         - ReagentId: Vitamin
           Quantity: 6
@@ -188,8 +188,8 @@
         maxVol: 32
         reagents:
         - ReagentId: Nutriment
-          Quantity: 8
-        - ReagentId: Grain # Persistence: Nutriment < Grain
+          Quantity: 8 # Scav: 14 < 8
+        - ReagentId: Grain # Scav: Nutriment < Grain
           Quantity: 6
         - ReagentId: Vitamin
           Quantity: 4
@@ -218,8 +218,8 @@
         maxVol: 30
         reagents:
         - ReagentId: Nutriment
-          Quantity: 4
-        - ReagentId: Grain # Persistence: Nutriment < Grain
+          Quantity: 4 # Scav: 10 < 4
+        - ReagentId: Grain # Scav: Nutriment < Grain
           Quantity: 6
         - ReagentId: Vitamin
           Quantity: 18

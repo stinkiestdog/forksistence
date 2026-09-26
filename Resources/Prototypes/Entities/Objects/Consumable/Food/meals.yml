@@ -23,7 +23,7 @@
         - ReagentId: Nutriment
           Quantity: 20
 
-# Persistence: New based for grainy foods, for Yinglets
+# Scav: New base for grainy foods, for Yinglets
 - type: entity
   abstract: true
   parent: FoodMealBase
@@ -43,7 +43,7 @@
 # Meals
 
 - type: entity
-  parent: FoodMealGrainBase # Persistence: FoodMealBase < FoodMealGrainBase
+  parent: FoodMealGrainBase # Scav: FoodMealBase < FoodMealGrainBase
   id: FoodMealPotatoLoaded
   name: loaded baked potato
   description: Totally baked.
@@ -59,7 +59,7 @@
 # Tastes like potato.
 
 - type: entity
-  parent: FoodMealGrainBase # Persistence: FoodMealBase < FoodMealGrainBase
+  parent: FoodMealGrainBase # Scav: FoodMealBase < FoodMealGrainBase
   id: FoodMealFries
   name: space fries
   description: AKA, French Fries, Freedom Fries, etc.
@@ -75,7 +75,7 @@
 # Tastes like fries, salt.
 
 - type: entity
-  parent: FoodMealGrainBase # Persistence: FoodMealBase < FoodMealGrainBase
+  parent: FoodMealGrainBase # Scav: FoodMealBase < FoodMealGrainBase
   id: FoodMealFriesCheesy
   name: cheesy fries
   description: Fries. Covered in cheese. Duh.
@@ -138,7 +138,7 @@
       food:
         maxVol: 20
         reagents:
-        - ReagentId: Grain
+        - ReagentId: Grain # Scav: Nutriment < Grain
           Quantity: 15
         - ReagentId: TableSalt
           Quantity: 2
@@ -167,8 +167,8 @@
         maxVol: 25
         reagents:
         - ReagentId: Nutriment
-          Quantity: 5
-        - ReagentId: Grain
+          Quantity: 5 # Scav: 20 < 5
+        - ReagentId: Grain # Scav
           Quantity: 15
         - ReagentId: TableSalt
           Quantity: 2
@@ -249,8 +249,8 @@
         maxVol: 40
         reagents:
         - ReagentId: Nutriment
-          Quantity: 10
-        - ReagentId: Grain
+          Quantity: 10 # Scav: 25 < 10
+        - ReagentId: Grain # Scav
           Quantity: 15
         - ReagentId: CapsaicinOil
           Quantity: 7
@@ -310,7 +310,7 @@
 # Tastes like eggplant, cheese.
 
 - type: entity
-  parent: FoodMealGrainBase # Persistence: FoodMealBase < FoodMealGrainBase
+  parent: FoodMealGrainBase # Scav: FoodMealBase < FoodMealGrainBase
   id: FoodMealPotatoYaki
   name: yaki imo
   description: Made with roasted sweet potatoes!
@@ -346,8 +346,8 @@
         maxVol: 55
         reagents:
         - ReagentId: Nutriment
-          Quantity: 30
-        - ReagentId: Grain
+          Quantity: 30 # Scav: 40 < 30
+        - ReagentId: Grain # Scav
           Quantity: 10
         - ReagentId: CarpoToxin
           Quantity: 3
@@ -442,8 +442,8 @@
         maxVol: 15
         reagents:
         - ReagentId: Nutriment
-          Quantity: 4
-        - ReagentId: Grain
+          Quantity: 4 # Scav: 6 < 4
+        - ReagentId: Grain # Scav
           Quantity: 2
         - ReagentId: Vitamin
           Quantity: 1
@@ -504,8 +504,8 @@
         maxVol: 15
         reagents:
         - ReagentId: Nutriment
-          Quantity: 4
-        - ReagentId: Grain
+          Quantity: 4 # Scav: 6 < 4
+        - ReagentId: Grain # Scav
           Quantity: 2
         - ReagentId: Vitamin
           Quantity: 4

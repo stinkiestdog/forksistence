@@ -16,7 +16,7 @@
       food:
         maxVol: 10
         reagents:
-        - ReagentId: Grain
+        - ReagentId: Grain # Scav: Nutriment < Grain
           Quantity: 6.66 # 1/3 of a loaf of bread, technically losing 0.01 nutriment per batch of three buns over making bread loaves/slices
   - type: Butcherable
     butcherDelay: 1
@@ -57,7 +57,7 @@
         maxVol: 5
         canReact: false # Dont want cause reactions inside burgers after merging ingredients
         reagents:
-        - ReagentId: Grain
+        - ReagentId: Grain # Scav: Nutriment < Grain
           Quantity: 3.3 # 1/2 of a bun
 
 - type: entity
@@ -75,7 +75,7 @@
       food:
         maxVol: 5
         reagents:
-        - ReagentId: Grain
+        - ReagentId: Grain # Scav: Nutriment < Grain
           Quantity: 3.3 # 1/2 of a bun
   - type: FoodSequenceElement
     entries:
@@ -100,8 +100,8 @@
         maxVol: 15
         reagents:
         - ReagentId: Nutriment
-          Quantity: 4
-        - ReagentId: Grain
+          Quantity: 4 # Scav: 7 < 4
+        - ReagentId: Grain # Scav
           Quantity: 3
         - ReagentId: Vitamin
           Quantity: 3
@@ -162,7 +162,7 @@
       food:
         maxVol: 20
         reagents:
-        - ReagentId: Grain
+        - ReagentId: Grain # Scav: Nutriment < Grain
           Quantity: 2
         - ReagentId: Protein
           Quantity: 6
@@ -205,8 +205,8 @@
         maxVol: 30
         reagents:
         - ReagentId: Nutriment
-          Quantity: 14
-        - ReagentId: Grain
+          Quantity: 14 # Scav: 19 < 14
+        - ReagentId: Grain # Scav
           Quantity: 5
         - ReagentId: Vitamin
           Quantity: 5
@@ -246,7 +246,7 @@
       food:
         maxVol: 15
         reagents:
-        - ReagentId: Grain
+        - ReagentId: Grain # Scav: Nutriment < Grain
           Quantity: 3
         - ReagentId: Protein
           Quantity: 5
@@ -290,7 +290,7 @@
       food:
         maxVol: 15
         reagents:
-        - ReagentId: Grain
+        - ReagentId: Grain # Scav: Nutriment < Grain
           Quantity: 3
         - ReagentId: Protein
           Quantity: 6
@@ -327,8 +327,8 @@
         maxVol: 45
         reagents:
         - ReagentId: Nutriment
-          Quantity: 13
-        - ReagentId: Grain
+          Quantity: 13 # Scav: 18 < 13
+        - ReagentId: Grain # Scav
           Quantity: 5
         - ReagentId: Protein
           Quantity: 18
@@ -368,8 +368,8 @@
         maxVol: 55
         reagents:
         - ReagentId: Nutriment
-          Quantity: 13
-        - ReagentId: Grain
+          Quantity: 13 # Scav: 18 < 13
+        - ReagentId: Grain # Scav
           Quantity: 5
         - ReagentId: Protein
           Quantity: 18
@@ -408,8 +408,8 @@
         maxVol: 20
         reagents:
         - ReagentId: Nutriment
-          Quantity: 3
-        - ReagentId: Grain
+          Quantity: 3 # Scav: 6 < 3
+        - ReagentId: Grain # Scav
           Quantity: 3
         - ReagentId: Protein
           Quantity: 6
@@ -446,8 +446,8 @@
         maxVol: 20
         reagents:
         - ReagentId: Nutriment
-          Quantity: 3
-        - ReagentId: Grain
+          Quantity: 3 # Scav: 6 < 3
+        - ReagentId: Grain # Scav
           Quantity: 3
         - ReagentId: Protein
           Quantity: 6
@@ -482,8 +482,8 @@
         maxVol: 20
         reagents:
         - ReagentId: Nutriment
-          Quantity: 6
-        - ReagentId: Grain
+          Quantity: 3 # Scav: 6 < 3
+        - ReagentId: Grain # Scav
           Quantity: 3
         - ReagentId: Protein
           Quantity: 6
@@ -518,8 +518,8 @@
         maxVol: 20
         reagents:
         - ReagentId: Nutriment
-          Quantity: 3
-        - ReagentId: Grain
+          Quantity: 3 # Scav: 6 < 3
+        - ReagentId: Grain # Scav
           Quantity: 3
         - ReagentId: Protein
           Quantity: 6
@@ -554,8 +554,8 @@
         maxVol: 20
         reagents:
         - ReagentId: Nutriment
-          Quantity: 3
-        - ReagentId: Grain
+          Quantity: 3 # Scav: 6 < 3
+        - ReagentId: Grain # Scav
           Quantity: 3
         - ReagentId: Protein
           Quantity: 6
@@ -590,8 +590,8 @@
         maxVol: 20
         reagents:
         - ReagentId: Nutriment
-          Quantity: 3
-        - ReagentId: Grain
+          Quantity: 3 # Scav: 6 < 3
+        - ReagentId: Grain # Scav
           Quantity: 3
         - ReagentId: Protein
           Quantity: 6
@@ -630,8 +630,8 @@
         maxVol: 15
         reagents:
         - ReagentId: Nutriment
-          Quantity: 3
-        - ReagentId: Grain
+          Quantity: 3 # Scav: 6 < 3
+        - ReagentId: Grain # Scav
           Quantity: 3
         - ReagentId: Protein
           Quantity: 3
@@ -660,8 +660,8 @@
         maxVol: 26
         reagents:
         - ReagentId: Nutriment
-          Quantity: 4
-        - ReagentId: Grain
+          Quantity: 4 # Scav: 7 < 4
+        - ReagentId: Grain # Scav
           Quantity: 3
         - ReagentId: Vitamin
           Quantity: 7
@@ -704,8 +704,8 @@
         maxVol: 20
         reagents:
         - ReagentId: Nutriment
-          Quantity: 2
-        - ReagentId: Grain
+          Quantity: 2 # Scav: 5 < 2
+        - ReagentId: Grain # Scav
           Quantity: 3
         - ReagentId: Protein
           Quantity: 7
@@ -757,8 +757,8 @@
         maxVol: 20
         reagents:
         - ReagentId: Nutriment
-          Quantity: 2
-        - ReagentId: Grain
+          Quantity: 2 # Scav: 4 < 2
+        - ReagentId: Grain # Scav
           Quantity: 2
         - ReagentId: Protein
           Quantity: 6
@@ -816,8 +816,10 @@
       food:
         maxVol: 15
         reagents:
-        - ReagentId: Grain
-          Quantity: 4
+        - ReagentId: Nutriment
+          Quantity: 1 # Scav: 4 < 1
+        - ReagaentId: Grain # Scav
+          Quantity: 3
         - ReagentId: Protein
           Quantity: 5
         - ReagentId: Vitamin
@@ -870,8 +872,8 @@
         maxVol: 65
         reagents:
         - ReagentId: Nutriment
-          Quantity: 28
-        - ReagentId: Grain
+          Quantity: 28 # Scav: 31 < 28
+        - ReagentId: Grain # Scav
           Quantity: 3
         - ReagentId: Protein
           Quantity: 15
@@ -918,8 +920,8 @@
         maxVol: 20
         reagents:
         - ReagentId: Nutriment
-          Quantity: 12
-        - ReagentId: Grain
+          Quantity: 12 # Scav: 15 < 12
+        - ReagentId: Grain # Scav
           Quantity: 3
         - ReagentId: Protein
           Quantity: 5
@@ -953,8 +955,8 @@
         maxVol: 15
         reagents:
         - ReagentId: Nutriment
-          Quantity: 5
-        - ReagentId: Grain
+          Quantity: 5 # Scav: 8 < 5
+        - ReagentId: Grain # Scav
           Quantity: 3
         - ReagentId: Licoxide
           Quantity: 5
@@ -1020,8 +1022,8 @@
         maxVol: 55
         reagents:
         - ReagentId: Nutriment
-          Quantity: 22
-        - ReagentId: Grain
+          Quantity: 22 # Scav: 25 < 22
+        - ReagentId: Grain # Scav
           Quantity: 3
         - ReagentId: Protein
           Quantity: 5
@@ -1075,8 +1077,8 @@
         maxVol: 25
         reagents:
         - ReagentId: Nutriment
-          Quantity: 4
-        - ReagentId: Grain
+          Quantity: 4 # Scav: 7 < 4
+        - ReagentId: Grain # Scav
           Quantity: 3
         - ReagentId: Vitamin
           Quantity: 12
@@ -1104,8 +1106,8 @@
         maxVol: 20
         reagents:
         - ReagentId: Nutriment
-          Quantity: 2
-        - ReagentId: Grain
+          Quantity: 2 # Scav: 5 < 2
+        - ReagentId: Grain # Scav
           Quantity: 3
         - ReagentId: Protein
           Quantity: 6
@@ -1154,8 +1156,8 @@
         maxVol: 20
         reagents:
         - ReagentId: Nutriment
-          Quantity: 2
-        - ReagentId: Grain
+          Quantity: 2 # Scav: 5 < 2
+        - ReagentId: Grain # Scav
           Quantity: 3
         - ReagentId: Protein
           Quantity: 8
@@ -1186,8 +1188,8 @@
         maxVol: 30
         reagents:
         - ReagentId: Nutriment
-          Quantity: 8
-        - ReagentId: Grain
+          Quantity: 8 # Scav: 11 < 8
+        - ReagentId: Grain # Scav
           Quantity: 3
         - ReagentId: Protein
           Quantity: 10
@@ -1232,8 +1234,8 @@
         maxVol: 25
         reagents:
         - ReagentId: Nutriment
-          Quantity: 3
-        - ReagentId: Grain
+          Quantity: 3 # Scav: 6 < 3
+        - ReagentId: Grain # Scav
           Quantity: 3
         - ReagentId: Protein
           Quantity: 9
@@ -1266,7 +1268,7 @@
       food:
         maxVol: 25
         reagents:
-        - ReagentId: Grain
+        - ReagentId: Grain # Scav: Nutriment < Grain
           Quantity: 2
         - ReagentId: Protein
           Quantity: 6
@@ -1300,8 +1302,8 @@
         maxVol: 20
         reagents:
         - ReagentId: Nutriment
-          Quantity: 3
-        - ReagentId: Grain
+          Quantity: 3 # Scav: 6 < 3
+        - ReagentId: Grain # Scav
           Quantity: 3
         - ReagentId: Protein
           Quantity: 6
@@ -1397,8 +1399,8 @@
         maxVol: 20
         reagents:
         - ReagentId: Nutriment
-          Quantity: 10
-        - ReagentId: Grain
+          Quantity: 10 # Scav: 13 < 10
+        - ReagentId: Grain # Scav
           Quantity: 3
         - ReagentId: Vitamin
           Quantity: 5
@@ -1432,8 +1434,8 @@
         maxVol: 20
         reagents:
         - ReagentId: Nutriment
-          Quantity: 1
-        - ReagentId: Grain
+          Quantity: 1 # Scav: 4 < 1
+        - ReagentId: Grain # Scav
           Quantity: 3
         - ReagentId: Protein
           Quantity: 5
@@ -1468,8 +1470,8 @@
         maxVol: 90
         reagents:
         - ReagentId: Nutriment
-          Quantity: 35
-        - ReagentId: Grain
+          Quantity: 35 # Scav: 44 < 35
+        - ReagentId: Grain # Scav
           Quantity: 9
         - ReagentId: Vitamin
           Quantity: 24
@@ -1502,8 +1504,8 @@
         maxVol: 15
         reagents:
         - ReagentId: Nutriment
-          Quantity: 5
-        - ReagentId: Grain
+          Quantity: 5 # Scav: 8 < 5
+        - ReagentId: Grain # Scav
           Quantity: 3
         - ReagentId: Protein
           Quantity: 3
@@ -1541,7 +1543,7 @@
       food:
         maxVol: 15
         reagents:
-        - ReagentId: Grain
+        - ReagentId: Grain # Scav: Nutriment < Grain
           Quantity: 3
         - ReagentId: Protein
           Quantity: 6
@@ -1595,7 +1597,7 @@
       food:
         maxVol: 15
         reagents:
-        - ReagentId: Grain
+        - ReagentId: Grain # Scav: Nutriment < Grain
           Quantity: 3
         - ReagentId: Protein
           Quantity: 4

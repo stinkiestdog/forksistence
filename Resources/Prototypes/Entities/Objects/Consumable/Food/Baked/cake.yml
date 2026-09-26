@@ -17,8 +17,8 @@
         maxVol: 55 # flavored cakes have less room for spiking
         reagents:
         - ReagentId: Nutriment
-          Quantity: 20
-        - ReagentId: Grain
+          Quantity: 20 # Scav: 40 < 20
+        - ReagentId: Grain # Scav
           Quantity: 20
         - ReagentId: Vitamin
           Quantity: 10
@@ -57,8 +57,8 @@
         maxVol: 12
         reagents:
         - ReagentId: Nutriment
-          Quantity: 4
-        - ReagentId: Grain
+          Quantity: 4 # Scav: 8 < 4
+        - ReagentId: Grain # Scav
           Quantity: 4
         - ReagentId: Vitamin
           Quantity: 2
@@ -143,7 +143,7 @@
       food:
         maxVol: 55
         reagents:
-        - ReagentId: Grain
+        - ReagentId: Grain # Scav: Nutriment < Grain
           Quantity: 20
         - ReagentId: Vitamin
           Quantity: 5
@@ -164,7 +164,7 @@
       food:
         maxVol: 10
         reagents:
-        - ReagentId: Grain
+        - ReagentId: Grain # Scav: Nutriment < Grain
           Quantity: 4
         - ReagentId: Vitamin
           Quantity: 1
@@ -529,8 +529,8 @@
         maxVol: 70
         reagents:
         - ReagentId: Nutriment
-          Quantity: 20
-        - ReagentId: Grain
+          Quantity: 20 # Scav: 40 < 20
+        - ReagentId: Grain # Scav
           Quantity: 20
         - ReagentId: Vitamin
           Quantity: 20
@@ -561,8 +561,8 @@
         maxVol: 15
         reagents:
         - ReagentId: Nutriment
-          Quantity: 4
-        - ReagentId: Grain
+          Quantity: 4 # Scav: 8 < 4
+        - ReagentId: Grain # Scav
           Quantity: 4
         - ReagentId: Vitamin
           Quantity: 4
@@ -604,8 +604,8 @@
         maxVol: 55
         reagents:
         - ReagentId: Nutriment
-          Quantity: 20
-        - ReagentId: Grain
+          Quantity: 20 # Scav: 40 < 20
+        - ReagentId: Grain # Scav
           Quantity: 20
         - ReagentId: Theobromine
           Quantity: 5
@@ -635,8 +635,8 @@
         maxVol: 15
         reagents:
         - ReagentId: Nutriment
-          Quantity: 4
-        - ReagentId: Grain
+          Quantity: 4 # Scav: 8 < 4
+        - ReagentId: Grain # Scav
           Quantity: 4
         - ReagentId: Theobromine
           Quantity: 1
@@ -779,8 +779,8 @@
         maxVol: 60
         reagents:
         - ReagentId: Nutriment
-          Quantity: 15
-        - ReagentId: Grain
+          Quantity: 15 # Scav: 35 < 15
+        - ReagentId: Grain # Scav
           Quantity: 20
         - ReagentId: Vitamin
           Quantity: 15
@@ -813,8 +813,8 @@
         maxVol: 15
         reagents:
         - ReagentId: Nutriment
-          Quantity: 3
-        - ReagentId: Grain
+          Quantity: 3 # Scav: 7 < 3
+        - ReagentId: Grain # Scav
           Quantity: 4
         - ReagentId: Vitamin
           Quantity: 3
@@ -921,8 +921,8 @@
         maxVol: 55
         reagents:
         - ReagentId: Nutriment
-          Quantity: 5
-        - ReagentId: Grain
+          Quantity: 5 # Scav: 25 < 5
+        - ReagentId: Grain # Scav
           Quantity: 20
         - ReagentId: Vitamin
           Quantity: 5
@@ -945,8 +945,8 @@
         maxVol: 15
         reagents:
         - ReagentId: Nutriment
-          Quantity: 3
-        - ReagentId: Grain
+          Quantity: 3 # Scav: 6 < 3
+        - ReagentId: Grain # Scav
           Quantity: 3
         - ReagentId: Vitamin
           Quantity: 2
@@ -978,8 +978,8 @@
         maxVol: 55
         reagents:
         - ReagentId: Nutriment
-          Quantity: 10
-        - ReagentId: Grain
+          Quantity: 10 # Scav: 30 < 10
+        - ReagentId: Grain # Scav
           Quantity: 20
         - ReagentId: Vitamin
           Quantity: 5
@@ -1002,8 +1002,8 @@
         maxVol: 15
         reagents:
         - ReagentId: Nutriment
-          Quantity: 4
-        - ReagentId: Grain
+          Quantity: 4 # Scav: 8 < 4
+        - ReagentId: Grain # Scav
           Quantity: 4
         - ReagentId: Vitamin
           Quantity: 1
@@ -1029,8 +1029,8 @@
         maxVol: 55
         reagents:
         - ReagentId: Nutriment
-          Quantity: 10
-        - ReagentId: Grain
+          Quantity: 10 # Scav: 30 < 10
+        - ReagentId: Grain # Scav
           Quantity: 20
         - ReagentId: Vitamin
           Quantity: 5
@@ -1053,8 +1053,8 @@
         maxVol: 15
         reagents:
         - ReagentId: Nutriment
-          Quantity: 4
-        - ReagentId: Grain
+          Quantity: 4 # Scav: 8 < 4
+        - ReagentId: Grain # Scav
           Quantity: 4
         - ReagentId: Vitamin
           Quantity: 1
@@ -1082,7 +1082,7 @@
       food:
         maxVol: 30
         reagents:
-        - ReagentId: Grain
+        - ReagentId: Grain # Scav: Nutriment < Grain
           Quantity: 20
         - ReagentId: Vitamin
           Quantity: 5
@@ -1172,8 +1172,8 @@
         maxVol: 125 # SUPER dense cake
         reagents:
         - ReagentId: Nutriment
-          Quantity: 50
-        - ReagentId: Grain
+          Quantity: 50 # Scav: 80 < 50
+        - ReagentId: Grain # Scav
           Quantity: 30
         - ReagentId: Sugar
           Quantity: 30
@@ -1201,8 +1201,8 @@
         maxVol: 25
         reagents:
         - ReagentId: Nutriment
-          Quantity: 7
-        - ReagentId: Grain
+          Quantity: 7 # Scav: 10 < 7
+        - ReagentId: Grain # Scav
           Quantity: 3
         - ReagentId: Sugar
           Quantity: 5
@@ -1242,8 +1242,8 @@
         maxVol: 55
         reagents:
         - ReagentId: Nutriment
-          Quantity: 10
-        - ReagentId: Grain
+          Quantity: 10 # Scav: 30 < 10
+        - ReagentId: Grain # Scav
           Quantity: 20
         - ReagentId: Vitamin
           Quantity: 5
@@ -1271,8 +1271,8 @@
         maxVol: 15
         reagents:
         - ReagentId: Nutriment
-          Quantity: 4
-        - ReagentId: Grain
+          Quantity: 4 # Scav: 8 < 4
+        - ReagentId: Grain # Scav
           Quantity: 4
         - ReagentId: Vitamin
           Quantity: 1
@@ -1302,8 +1302,8 @@
         maxVol: 55
         reagents:
         - ReagentId: Nutriment
-          Quantity: 20
-        - ReagentId: Grain
+          Quantity: 20 # Scav: 40 < 20
+        - ReagentId: Grain # Scav
           Quantity: 20
         - ReagentId: Vitamin
           Quantity: 10
@@ -1345,8 +1345,8 @@
         maxVol: 12
         reagents:
         - ReagentId: Nutriment
-          Quantity: 4
-        - ReagentId: Grain
+          Quantity: 4 # Scav: 8 < 4
+        - ReagentId: Grain # Scav
           Quantity: 4
         - ReagentId: Vitamin
           Quantity: 2
