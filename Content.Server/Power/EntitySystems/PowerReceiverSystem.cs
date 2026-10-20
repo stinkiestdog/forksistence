@@ -46,6 +46,13 @@ namespace Content.Server.Power.EntitySystems
         }
 
         [SubscribeLocalEvent]
+        private void OnReceiverStartup(EntityUid uid, ApcPowerReceiverComponent component, ComponentStartup args)
+        {
+            component.Powered = !component.PowerDisabled;
+            Dirty(uid, component);
+        }
+
+        [SubscribeLocalEvent]
         private void OnProviderShutdown(EntityUid uid, ApcPowerProviderComponent component, ComponentShutdown args)
         {
             foreach (var receiver in component.LinkedReceivers)
