@@ -25,6 +25,7 @@ namespace Content.Server.Power.EntitySystems
 
             SubscribeLocalEvent<ApcPowerReceiverComponent, ExtensionCableSystem.ProviderConnectedEvent>(OnProviderConnected);
             SubscribeLocalEvent<ApcPowerReceiverComponent, ExtensionCableSystem.ProviderDisconnectedEvent>(OnProviderDisconnected);
+            SubscribeLocalEvent<ApcPowerReceiverComponent, ComponentStartup>(OnReceiverStartup); // Persistence
 
             SubscribeLocalEvent<ApcPowerProviderComponent, ComponentShutdown>(OnProviderShutdown);
             SubscribeLocalEvent<ApcPowerProviderComponent, ExtensionCableSystem.ReceiverConnectedEvent>(OnReceiverConnected);
@@ -60,6 +61,13 @@ namespace Content.Server.Power.EntitySystems
                     SetNeedsPower(uid, !component.NeedsPower, component);
                 }
             });
+        }
+
+        // Persistence: Check if the power should be enabled when comp starts up
+        private void OnReceiverStartup(EntityUid uid, ApcPowerReceiverComponent component, ComponentStartup args)
+        {
+            component.Powered = !component.PowerDisabled;
+            Dirty(uid, component);
         }
 
         private void OnProviderShutdown(EntityUid uid, ApcPowerProviderComponent component, ComponentShutdown args)
