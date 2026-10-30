@@ -25,6 +25,84 @@
                 <BoxContainer Orientation="Horizontal" Margin ="0 0 0 2">
                     <Button Name="CCopySettings" Text="{Loc 'air-alarm-ui-widget-copy'}" ToolTip="{Loc 'air-alarm-ui-widget-copy-tooltip'}" />
                 </BoxContainer>
+                <Collapsible Margin="2 2 2 2"> <!-- Start Persistence: Environmental Siphoning -->
+                    <CollapsibleHeading Title="{Loc 'air-alarm-ui-widget-environmental-siphoning'}" />
+                    <CollapsibleBody Margin="20 0 0 0">
+                        <BoxContainer Orientation="Vertical"> <!-- What does C mean? I guess we doin' C -->
+
+                            <BoxContainer Orientation="Horizontal">
+                                <BoxContainer Orientation="Horizontal" HorizontalExpand="True">
+                                    <Label Text="{Loc 'air-alarm-ui-scrubber-environmental-siphon-rate-label'}" Margin="0 0 0 1"/>
+                                </BoxContainer>
+                                <BoxContainer Orientation="Vertical" HorizontalExpand="True">
+                                    <Label Text="{Loc 'air-alarm-ui-scrubber-volume-rate-label'}" Margin="0 0 0 1"/>
+                                    <FloatSpinBox Name="CEnvironmentalSiphonRate" HorizontalExpand="True" />
+                                </BoxContainer>
+                            </BoxContainer>
+
+                            <BoxContainer Orientation="Horizontal" Margin="0 2 0 0">
+                                <BoxContainer Orientation="Vertical" HorizontalExpand="True">
+                                    <Label Text=" " Margin="0 0 0 1"/> <!-- Blank label to keep the same spacing -->
+                                    <Button Name="CEnvironmentalSiphonPressureEnabledOne" Text="{Loc 'phrase-enable'}" ToggleMode="True" />
+                                </BoxContainer>
+                                <BoxContainer Orientation="Vertical" HorizontalExpand="True">
+                                    <Label Text="{Loc 'air-alarm-ui-scrubber-pressure-siphon-label'}" Margin="0 0 0 1"/>
+                                    <OptionButton Name="CEnvironmentalSiphonPressureOptionOne" HorizontalExpand="True" />
+                                </BoxContainer>
+                                <BoxContainer Orientation="Vertical" HorizontalExpand="True">
+                                    <Label Text="{Loc 'air-alarm-ui-scrubber-pressure-siphon-value-label'}" Margin="0 0 0 1"/>
+                                    <FloatSpinBox Name="CEnvironmentalSiphonPressureValueOne" HorizontalExpand="True" />
+                                </BoxContainer>
+                            </BoxContainer>
+
+                            <BoxContainer Orientation="Horizontal">
+                                <BoxContainer Orientation="Vertical" HorizontalExpand="True">
+                                    <Label Text=" " Margin="0 0 0 1"/> <!-- Blank label to keep the same spacing -->
+                                    <Button Name="CEnvironmentalSiphonPressureEnabledTwo" Text="{Loc 'phrase-enable'}" ToggleMode="True" />
+                                </BoxContainer>
+                                <BoxContainer Orientation="Vertical" HorizontalExpand="True">
+                                    <Label Text="{Loc 'air-alarm-ui-scrubber-pressure-siphon-label'}" Margin="0 0 0 1"/>
+                                    <OptionButton Name="CEnvironmentalSiphonPressureOptionTwo" HorizontalExpand="True" />
+                                </BoxContainer>
+                                <BoxContainer Orientation="Vertical" HorizontalExpand="True">
+                                    <Label Text="{Loc 'air-alarm-ui-scrubber-pressure-siphon-value-label'}" Margin="0 0 0 1"/>
+                                    <FloatSpinBox Name="CEnvironmentalSiphonPressureValueTwo" HorizontalExpand="True" />
+                                </BoxContainer>
+                            </BoxContainer>
+
+                            <BoxContainer Orientation="Horizontal">
+                                <BoxContainer Orientation="Vertical" HorizontalExpand="True">
+                                    <Label Text=" " Margin="0 0 0 1"/> <!-- Blank label to keep the same spacing -->
+                                    <Button Name="CEnvironmentalSiphonTempEnabledOne" Text="{Loc 'phrase-enable'}" ToggleMode="True" />
+                                </BoxContainer>
+                                <BoxContainer Orientation="Vertical" HorizontalExpand="True">
+                                    <Label Text="{Loc 'air-alarm-ui-scrubber-temp-siphon-label'}" Margin="0 0 0 1"/>
+                                    <OptionButton Name="CEnvironmentalSiphonTempOptionOne" HorizontalExpand="True" />
+                                </BoxContainer>
+                                <BoxContainer Orientation="Vertical" HorizontalExpand="True">
+                                    <Label Text="{Loc 'air-alarm-ui-scrubber-temp-siphon-value-label'}" Margin="0 0 0 1"/>
+                                    <FloatSpinBox Name="CEnvironmentalSiphonTempValueOne" HorizontalExpand="True" />
+                                </BoxContainer>
+                            </BoxContainer>
+
+                            <BoxContainer Orientation="Horizontal">
+                                <BoxContainer Orientation="Vertical" HorizontalExpand="True">
+                                    <Label Text=" " Margin="0 0 0 1"/> <!-- Blank label to keep the same spacing -->
+                                    <Button Name="CEnvironmentalSiphonTempEnabledTwo" Text="{Loc 'phrase-enable'}" ToggleMode="True" />
+                                </BoxContainer>
+                                <BoxContainer Orientation="Vertical" HorizontalExpand="True">
+                                    <Label Text="{Loc 'air-alarm-ui-scrubber-temp-siphon-label'}" Margin="0 0 0 1"/>
+                                    <OptionButton Name="CEnvironmentalSiphonTempOptionTwo" HorizontalExpand="True" />
+                                </BoxContainer>
+                                <BoxContainer Orientation="Vertical" HorizontalExpand="True">
+                                    <Label Text="{Loc 'air-alarm-ui-scrubber-temp-siphon-value-label'}" Margin="0 0 0 1"/>
+                                    <FloatSpinBox Name="CEnvironmentalSiphonTempValueTwo" HorizontalExpand="True" />
+                                </BoxContainer>
+                            </BoxContainer>
+
+                        </BoxContainer>
+                    </CollapsibleBody>
+                </Collapsible> <!-- End Persistence -->
                 <!-- Lower row: every single gas -->
                 <Collapsible Margin="2 2 2 2">
                     <CollapsibleHeading Title="{Loc 'air-alarm-ui-widget-gas-filters'}" />

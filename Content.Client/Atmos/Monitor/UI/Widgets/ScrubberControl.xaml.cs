@@ -1,3 +1,4 @@
+using System.Linq;
 using Content.Shared.Atmos;
 using Content.Shared.Atmos.EntitySystems;
 using Content.Shared.Atmos.Monitor.Components;
@@ -35,6 +36,22 @@ public sealed partial class ScrubberControl : BoxContainer
     private GridContainer _gases => CGasContainer;
     private Dictionary<Gas, Button> _gasControls = new();
     private Dictionary<Gas, FloatSpinBox> _gasLimitControls = new(); // Persistence: Scrub above percentage
+
+    private Button _pressureButtonOne => CEnvironmentalSiphonPressureEnabledOne;
+    private Button _pressureButtonTwo => CEnvironmentalSiphonPressureEnabledTwo;
+    private Button _tempButtonOne => CEnvironmentalSiphonTempEnabledOne;
+    private Button _tempButtonTwo => CEnvironmentalSiphonTempEnabledTwo;
+
+    private OptionButton _pressureSiphonOne => CEnvironmentalSiphonPressureOptionOne;
+    private OptionButton _pressureSiphonTwo => CEnvironmentalSiphonPressureOptionTwo;
+    private OptionButton _tempSiphonOne => CEnvironmentalSiphonTempOptionOne;
+    private OptionButton _tempSiphonTwo => CEnvironmentalSiphonTempOptionTwo;
+
+    private FloatSpinBox _environmentalSiphonRate => CEnvironmentalSiphonRate;
+    private FloatSpinBox _pressureSiphonValueOne => CEnvironmentalSiphonPressureValueOne;
+    private FloatSpinBox _pressureSiphonValueTwo => CEnvironmentalSiphonPressureValueTwo;
+    private FloatSpinBox _tempSiphonValueOne => CEnvironmentalSiphonTempValueOne;
+    private FloatSpinBox _tempSiphonValueTwo => CEnvironmentalSiphonTempValueTwo;
 
     public ScrubberControl(GasVentScrubberData data, string address, string name)
     {
@@ -87,6 +104,133 @@ public sealed partial class ScrubberControl : BoxContainer
             ScrubberDataChanged?.Invoke(_address, _data);
         };
         _pumpDirection.Disabled = data.AirAlarmPanicWireCut;
+
+        // Start Persistence
+        _environmentalSiphonRate.Value = _data.EnvironmentalSiphonRate;
+        _environmentalSiphonRate.OnValueChanged += _ =>
+        {
+            _data.EnvironmentalSiphonRate = _environmentalSiphonRate.Value;
+            ScrubberDataChanged?.Invoke(_address, _data);
+        };
+
+        _pressureSiphonValueOne.Value = _data.EnvironmentalSiphonData[0].Threshold;
+        _pressureSiphonValueOne.OnValueChanged += _ =>
+        {
+            _data.EnvironmentalSiphonData[0].Threshold = _pressureSiphonValueOne.Value;
+            ScrubberDataChanged?.Invoke(_address, _data);
+        };
+
+        _pressureSiphonValueTwo.Value = _data.EnvironmentalSiphonData[1].Threshold;
+        _pressureSiphonValueTwo.OnValueChanged += _ =>
+        {
+            _data.EnvironmentalSiphonData[1].Threshold = _pressureSiphonValueTwo.Value;
+            ScrubberDataChanged?.Invoke(_address, _data);
+        };
+
+        _tempSiphonValueOne.Value = _data.EnvironmentalSiphonData[2].Threshold;
+        _tempSiphonValueOne.OnValueChanged += _ =>
+        {
+            _data.EnvironmentalSiphonData[2].Threshold = _tempSiphonValueOne.Value;
+            ScrubberDataChanged?.Invoke(_address, _data);
+        };
+
+        _tempSiphonValueTwo.Value = _data.EnvironmentalSiphonData[3].Threshold;
+        _tempSiphonValueTwo.OnValueChanged += _ =>
+        {
+            _data.EnvironmentalSiphonData[3].Threshold = _tempSiphonValueTwo.Value;
+            ScrubberDataChanged?.Invoke(_address, _data);
+        };
+
+        _pressureButtonOne.OnToggled += args =>
+        {
+            _data.EnvironmentalSiphonData[0].Enabled = args.Pressed;
+
+            ScrubberDataChanged?.Invoke(_address, _data);
+        };
+        _pressureButtonOne.Pressed = _data.EnvironmentalSiphonData[0].Enabled;
+
+        _pressureButtonTwo.OnToggled += args =>
+        {
+            _data.EnvironmentalSiphonData[1].Enabled = args.Pressed;
+
+            ScrubberDataChanged?.Invoke(_address, _data);
+        };
+        _pressureButtonTwo.Pressed = _data.EnvironmentalSiphonData[1].Enabled;
+
+        _tempButtonOne.OnToggled += args =>
+        {
+            _data.EnvironmentalSiphonData[2].Enabled = args.Pressed;
+
+            ScrubberDataChanged?.Invoke(_address, _data);
+        };
+        _tempButtonOne.Pressed = _data.EnvironmentalSiphonData[2].Enabled;
+
+        _tempButtonTwo.OnToggled += args =>
+        {
+            _data.EnvironmentalSiphonData[3].Enabled = args.Pressed;
+
+            ScrubberDataChanged?.Invoke(_address, _data);
+        };
+        _tempButtonTwo.Pressed = _data.EnvironmentalSiphonData[3].Enabled;
+        var filterTypes = Enum.GetValues<ScrubberEnvironmentalSiphonFilterType>();
+        var comparisonActions = Enum.GetValues<ScrubberEnvironmentalSiphonComparisonAction>();
+        foreach (var (filterType, comparisonAction) in filterTypes.Zip(comparisonActions) )
+        {
+            foreach (var comparisonDirection in Enum.GetValues<ScrubberEnvironmentalSiphonComparisonDirection>())
+            {
+                // Log.Error((((int)comparisonAction << 1) | (int)comparisonDirection).ToString());
+                _pressureSiphonOne.AddItem(
+                    Loc.GetString($"air-alarm-ui-scrubber-environmental-{comparisonAction.ToString().ToLowerInvariant()}-{comparisonDirection.ToString().ToLowerInvariant()}"), ((int)filterType << 1) | (int)comparisonDirection);
+                _pressureSiphonTwo.AddItem(
+                    Loc.GetString($"air-alarm-ui-scrubber-environmental-{comparisonAction.ToString().ToLowerInvariant()}-{comparisonDirection.ToString().ToLowerInvariant()}"), ((int)filterType << 1) | (int)comparisonDirection);
+                _tempSiphonOne.AddItem(
+                    Loc.GetString($"air-alarm-ui-scrubber-environmental-{comparisonAction.ToString().ToLowerInvariant()}-{comparisonDirection.ToString().ToLowerInvariant()}"), ((int)filterType << 1) | (int)comparisonDirection);
+                _tempSiphonTwo.AddItem(
+                    Loc.GetString($"air-alarm-ui-scrubber-environmental-{comparisonAction.ToString().ToLowerInvariant()}-{comparisonDirection.ToString().ToLowerInvariant()}"), ((int)filterType << 1) | (int)comparisonDirection);
+            }
+        }
+        var thing = ((int)_data.EnvironmentalSiphonData[0].FilterType << 1) | (int)_data.EnvironmentalSiphonData[0].ComparisonDirection;
+        Log.Error("thing is " + thing.ToString());
+        _pressureSiphonOne.SelectId(thing);
+        thing = ((int)_data.EnvironmentalSiphonData[1].FilterType << 1) | (int)_data.EnvironmentalSiphonData[1].ComparisonDirection;
+        Log.Error("thing is " + thing.ToString());
+        _pressureSiphonTwo.SelectId(thing);
+        thing = ((int)_data.EnvironmentalSiphonData[2].FilterType << 1) | (int)_data.EnvironmentalSiphonData[2].ComparisonDirection;
+        Log.Error("thing is " + thing.ToString());
+        _tempSiphonOne.SelectId(thing);
+        thing = ((int)_data.EnvironmentalSiphonData[3].FilterType << 1) | (int)_data.EnvironmentalSiphonData[3].ComparisonDirection;
+        Log.Error("thing is " + thing.ToString());
+        _tempSiphonTwo.SelectId(thing);
+
+        _pressureSiphonOne.OnItemSelected += args =>
+        {
+            _pressureSiphonOne.SelectId(args.Id);
+            data.EnvironmentalSiphonData[0].FilterType = (ScrubberEnvironmentalSiphonFilterType)args.Id;
+            ScrubberDataChanged?.Invoke(_address, _data);
+        };
+
+        _pressureSiphonTwo.OnItemSelected += args =>
+        {
+            _pressureSiphonTwo.SelectId(args.Id);
+            data.EnvironmentalSiphonData[1].FilterType = (ScrubberEnvironmentalSiphonFilterType)args.Id;
+            ScrubberDataChanged?.Invoke(_address, _data);
+        };
+
+        _tempSiphonOne.OnItemSelected += args =>
+        {
+            _tempSiphonOne.SelectId(args.Id);
+            data.EnvironmentalSiphonData[2].FilterType = (ScrubberEnvironmentalSiphonFilterType)args.Id;
+            ScrubberDataChanged?.Invoke(_address, _data);
+        };
+
+        _tempSiphonTwo.OnItemSelected += args =>
+        {
+            _tempSiphonTwo.SelectId(args.Id);
+            data.EnvironmentalSiphonData[3].FilterType = (ScrubberEnvironmentalSiphonFilterType)args.Id;
+            ScrubberDataChanged?.Invoke(_address, _data);
+        };
+
+        // End Persistence
 
         _copySettings.OnPressed += _ =>
         {

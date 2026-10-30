@@ -57,6 +57,12 @@ namespace Content.Server.Atmos.Piping.Unary.Components
         [DataField]
         public bool WideNet { get; set; } = false;
 
+        [DataField]
+        public float EnvironmentalSiphonRate = 200f;
+
+        public ScrubberEnvironmentalSiphonData[] EnvironmentalSiphonData = GasVentScrubberData.DefaultEnvironmentalSiphonData;
+
+
         public GasVentScrubberData ToAirAlarmData()
         {
             return new GasVentScrubberData
@@ -67,7 +73,9 @@ namespace Content.Server.Atmos.Piping.Unary.Components
                 FilterGasLimits = FilterGasLimits, // Persistence: Scrub above percentage
                 PumpDirection = PumpDirection,
                 VolumeRate = TransferRate,
-                WideNet = WideNet
+                WideNet = WideNet,
+                EnvironmentalSiphonRate = EnvironmentalSiphonRate,
+                EnvironmentalSiphonData = EnvironmentalSiphonData, // Persistence
             };
         }
 
@@ -78,6 +86,7 @@ namespace Content.Server.Atmos.Piping.Unary.Components
             PumpDirection = data.PumpDirection;
             TransferRate = data.VolumeRate;
             WideNet = data.WideNet;
+            EnvironmentalSiphonRate = data.EnvironmentalSiphonRate;
 
             if (!data.FilterGases.SequenceEqual(FilterGases))
             {
@@ -92,6 +101,13 @@ namespace Content.Server.Atmos.Piping.Unary.Components
                 FilterGasLimits.Clear();
                 foreach (var gas in data.FilterGasLimits.Keys)
                     FilterGasLimits[gas] = data.FilterGasLimits[gas];
+            }
+
+            if (!data.EnvironmentalSiphonData.SequenceEqual(EnvironmentalSiphonData))
+            {
+                EnvironmentalSiphonData = new ScrubberEnvironmentalSiphonData[data.EnvironmentalSiphonData.Length];
+                foreach (var line in data.EnvironmentalSiphonData)
+                    EnvironmentalSiphonData.Append(line);
             }
         }
     }

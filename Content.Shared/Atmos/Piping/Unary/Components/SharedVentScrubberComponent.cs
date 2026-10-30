@@ -34,11 +34,34 @@ namespace Content.Shared.Atmos.Piping.Unary.Components
             Gas.Hydrogen
         };
 
-        // Persistence: Scrub above percentage
+        // Start Persistence: Scrub above percentage
         public static Dictionary<Gas, float> DefaultFilterGasLimits = new()
         {
             { Gas.Nitrogen, 80 }
         };
+
+        // Continue Persistence: Environmental Siphoning
+        public float EnvironmentalSiphonRate = 200f;
+
+        public ScrubberEnvironmentalSiphonData[] EnvironmentalSiphonData = (ScrubberEnvironmentalSiphonData[])DefaultEnvironmentalSiphonData.Clone();
+
+        private static readonly ScrubberEnvironmentalSiphonData[] _defaultEnvironmentalSiphonData =
+        [
+            new(ScrubberEnvironmentalSiphonFilterType.Pressure, false, 0, ScrubberEnvironmentalSiphonComparisonDirection.Below, ScrubberEnvironmentalSiphonComparisonAction.Prevent, 90f),
+            new(ScrubberEnvironmentalSiphonFilterType.Pressure, false, 1, ScrubberEnvironmentalSiphonComparisonDirection.Above, ScrubberEnvironmentalSiphonComparisonAction.Siphon, 110f),
+            new(ScrubberEnvironmentalSiphonFilterType.Temperature, false, 0, ScrubberEnvironmentalSiphonComparisonDirection.Above, ScrubberEnvironmentalSiphonComparisonAction.Siphon, 283.15f),
+            new(ScrubberEnvironmentalSiphonFilterType.Temperature, false, 1, ScrubberEnvironmentalSiphonComparisonDirection.Below, ScrubberEnvironmentalSiphonComparisonAction.Siphon, 253.15f),
+        ];
+
+        public static ScrubberEnvironmentalSiphonData[] DefaultEnvironmentalSiphonData => (ScrubberEnvironmentalSiphonData[])_defaultEnvironmentalSiphonData.Clone();
+
+        // ScrubberEnvironmentalSiphonFilterType filterType,
+        // short index,
+        // bool enabled,
+        //     ScrubberEnvironmentalSiphonComparisonDirection comparisonDirection,
+        // ScrubberEnvironmentalSiphonComparisonAction action,
+        // float threshold)
+        // End Persistence
 
         // Presets for 'dumb' air alarm modes
 
@@ -98,4 +121,68 @@ namespace Content.Shared.Atmos.Piping.Unary.Components
         Siphoning = 0,
         Scrubbing = 1,
     }
+
+    public enum ScrubberEnvironmentalSiphonFilterType : sbyte
+    {
+        Pressure,
+        Temperature
+    }
+
+    [Serializable, NetSerializable]
+    public enum ScrubberEnvironmentalSiphonComparisonDirection : byte
+    {
+        Above,
+        Below
+    }
+
+    public enum ScrubberEnvironmentalSiphonComparisonAction : byte
+    {
+        Siphon,
+        Prevent
+    }
+
+    [Serializable, NetSerializable]
+    public enum ScrubberEnvironmentalSiphonSlot : sbyte
+    {
+        PressureOne = 0,
+        PressureTwo = 1,
+        TempOne = 2,
+        TempTwo = 3,
+
+        Pressure = PressureOne | PressureTwo,
+        Temp = TempOne | TempTwo
+    }
+
+    [DataDefinition, Serializable, NetSerializable]
+    public partial struct ScrubberEnvironmentalSiphonData(
+        ScrubberEnvironmentalSiphonFilterType filterType,
+        bool enabled,
+        byte index,
+        ScrubberEnvironmentalSiphonComparisonDirection comparisonDirection,
+        ScrubberEnvironmentalSiphonComparisonAction action,
+        float threshold)
+    {
+        public ScrubberEnvironmentalSiphonFilterType FilterType = filterType;
+        public bool Enabled = enabled;
+        public byte Index = index;
+        public ScrubberEnvironmentalSiphonComparisonDirection ComparisonDirection = comparisonDirection;
+        public ScrubberEnvironmentalSiphonComparisonAction Action = action;
+        public float Threshold = threshold;
+
+        public bool ConditionsMet(float reading)
+        {
+            return ComparisonDirection == ScrubberEnvironmentalSiphonComparisonDirection.Above
+                ? reading > Threshold
+                : reading < Threshold;
+        }
+    }
+
+    // [DataRecord, Serializable, NetSerializable]
+    // public partial record ScrubberEnvironmentalSiphonData(ScrubberEnvironmentalSiphonType Type, bool Enabled, float Value)
+    // {
+    //     public ScrubberEnvironmentalSiphonType Type;
+    //     public bool Enabled;
+    //     public float Value;
+    // }
+
 }

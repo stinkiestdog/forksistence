@@ -74,6 +74,18 @@ air-alarm-ui-atmos-gas-filter-percentage-tooltip = Scrub this gas only if the pe
 air-alarm-ui-atmos-gas-filter-above = when above (%)
 phrase-scrub = scrub
 
+air-alarm-ui-widget-environmental-siphoning = Environmental Siphoning
+air-alarm-ui-scrubber-environmental-siphon-rate-label = Siphon Rate
+air-alarm-ui-scrubber-temp-siphon-label = Mode
+air-alarm-ui-scrubber-temp-siphon-value-label = Temperature (K)
+air-alarm-ui-scrubber-pressure-siphon-label = Mode
+air-alarm-ui-scrubber-pressure-siphon-value-label = Pressure (kPa)
+air-alarm-ui-scrubber-environmental-siphon-above = Siphon Above
+air-alarm-ui-scrubber-environmental-siphon-below = Siphon Below
+air-alarm-ui-scrubber-environmental-prevent-above = Prevent Above
+air-alarm-ui-scrubber-environmental-prevent-below = Prevent Below
+phrase-enable = Enable
+
 ### Vent pumps
 
 air-alarm-ui-vent-pump-label = Vent direction

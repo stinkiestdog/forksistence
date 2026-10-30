@@ -22,6 +22,7 @@ using Content.Shared.Power;
 using Content.Shared.Tools.Systems;
 using JetBrains.Annotations;
 using Robust.Server.GameObjects;
+using Robust.Shared.Toolshed.Syntax;
 
 namespace Content.Server.Atmos.Piping.Unary.EntitySystems
 {
@@ -91,13 +92,13 @@ namespace Content.Server.Atmos.Piping.Unary.EntitySystems
 
         private void Scrub(float timeDelta, GasVentScrubberComponent scrubber, GasMixture? tile, PipeNode outlet)
         {
-            Scrub(timeDelta, scrubber.TransferRate * _atmosphereSystem.PumpSpeedup(), scrubber.PumpDirection, scrubber.FilterGases, scrubber.FilterGasLimits, tile, outlet.Air); // Persistence: Add scrubber.FilterGasLimits
+            Scrub(timeDelta, scrubber.TransferRate * _atmosphereSystem.PumpSpeedup(), scrubber.PumpDirection, scrubber.FilterGases, scrubber.FilterGasLimits, tile, outlet.Air, scrubber.EnvironmentalSiphonRate, scrubber.EnvironmentalSiphonData); // Persistence: Add scrubber.FilterGasLimits
         }
 
         /// <summary>
         /// True if we were able to scrub, false if we were not.
         /// </summary>
-        public bool Scrub(float timeDelta, float transferRate, ScrubberPumpDirection mode, HashSet<Gas> filterGases, Dictionary<Gas, float> filterLimits, GasMixture? tile, GasMixture destination) // Persistence: Add Dictionary<Gas, float> filterLimits
+        public bool Scrub(float timeDelta, float transferRate, ScrubberPumpDirection mode, HashSet<Gas> filterGases, Dictionary<Gas, float> filterLimits, GasMixture? tile, GasMixture destination, float environmentalSiphonRate, ScrubberEnvironmentalSiphonData[] environmentalSiphonData) // Persistence: Add Dictionary<Gas, float> filterLimits,
         {
             // Cannot scrub if tile is null or air-blocked.
             if (tile == null
@@ -113,6 +114,13 @@ namespace Content.Server.Atmos.Piping.Unary.EntitySystems
             // Nothing left to remove from the tile.
             if (MathHelper.CloseToPercent(removed.TotalMoles, 0f))
                 return false;
+
+            if (GetSiphonOverride(tile, environmentalSiphonData))
+            {
+                Log.Error("we are overriding with siphon");
+                mode = ScrubberPumpDirection.Scrubbing;
+                transferRate = environmentalSiphonRate;
+            }
 
             if (mode == ScrubberPumpDirection.Scrubbing)
             {
@@ -252,6 +260,34 @@ namespace Content.Server.Atmos.Piping.Unary.EntitySystems
         private void OnWeldChanged(EntityUid uid, GasVentScrubberComponent component, ref WeldableChangedEvent args)
         {
             UpdateState(uid, component);
+        }
+
+        public bool GetSiphonOverride(GasMixture? tile, ScrubberEnvironmentalSiphonData[] environmentalSiphonData)
+        {
+            if (tile is null)
+                return false;
+
+            var result = false;
+            for (int i = 0; i < environmentalSiphonData.Length; i++)
+            {
+                if (!environmentalSiphonData[i].Enabled)
+                    continue;
+
+                if (!environmentalSiphonData[i]
+                        .ConditionsMet(
+                            environmentalSiphonData[i].FilterType == ScrubberEnvironmentalSiphonFilterType.Pressure
+                                ? tile.Pressure
+                                : tile.Temperature))
+                    continue;
+
+                // Conditions met; Do stuff
+                if (environmentalSiphonData[i].Action == ScrubberEnvironmentalSiphonComparisonAction.Prevent)
+                    return false;
+                if (environmentalSiphonData[i].Action == ScrubberEnvironmentalSiphonComparisonAction.Siphon)
+                    result = true;
+            }
+
+            return result;
         }
     }
 }
