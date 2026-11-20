@@ -39,6 +39,7 @@
   - type: Appearance
   - type: ApcPowerReceiver
     powerLoad: 1500
+    voltage: Medium # Persistence: MV Thrusters
   - type: ExtensionCableReceiver
   - type: StaticPrice
     price: 300
@@ -140,6 +141,7 @@
         - MachineLayer
   - type: ApcPowerReceiver
     powerLoad: 10000
+    voltage: Medium # Persistence: MV Thrusters
   - type: Thruster
     thrust: 2560000
     basePowerLoad: 10000
@@ -231,6 +233,7 @@
     offset: 0, 0.125 #4 pixels
   - type: ApcPowerReceiver
     powerLoad: 500 #1/3 the power load of a normal thruster
+    voltage: Medium # Persistence: MV Thrusters
   - type: Rotatable
   - type: Construction
     graph: WallmountThrusterGraph
@@ -438,6 +441,7 @@
       visible: false
   - type: ApcPowerReceiver
     powerLoad: 500 #1/3 the power load of a regular gyroscope
+    voltage: Medium # Persistence: MV Thrusters
   - type: Machine
     board: GyroscopeFloorMachineCircuitboard
   - type: Destructible

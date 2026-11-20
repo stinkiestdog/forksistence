@@ -148,6 +148,9 @@
     extraLayerPrefix: mvstripes_
   - type: Construction
     graph: mvcable
+  - type: PowerProvider # Persistence
+    voltage: Medium
+  - type: ExtensionCableProvider # Persistence
 
 - type: entity
   id: CableMVUncuttable
