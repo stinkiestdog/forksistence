@@ -43,7 +43,10 @@ public sealed partial class SSDIndicatorSystem : EntitySystem
     private void OnStartup(Entity<SSDIndicatorComponent> ent, ref ComponentStartup args)
     {
         if (_net.IsServer)
+        {
+            ent.Comp.ManualSSD = false;
             StartSSD(ent.Owner, ent.Comp);
+        }
     }
 
     private void OnPlayerAttached(EntityUid uid, SSDIndicatorComponent component, PlayerAttachedEvent args)
